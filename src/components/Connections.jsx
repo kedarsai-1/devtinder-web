@@ -8,6 +8,7 @@ const Connections =()=>{
     const dispatch = useDispatch();
     const connections = useSelector((store)=>store.connection)
     const [Err,seterr]=useState("");
+  
     const fetchConnections =async ()=>{
         try{
         const res = await axios.get(BASE_URL+ "user/connections",{withCredentials:true})
@@ -31,7 +32,7 @@ const Connections =()=>{
         return;
     }
     if(connections.length ===0){
-        return <h1>No Connections Found</h1>
+        return <h1 className="flex justify-center my-10">No Connections Found</h1>
     }
     return(
         <div className="  text-center justify-center my-10">
@@ -43,7 +44,7 @@ const Connections =()=>{
           <div 
           key={_id}
           className=" flex m-4 p-4  bg-base-300 w-2/3 mx-auto rounded-lg">
-            <div> <img alt="photo" className="w-20 h-20 rounded-full " src = {photoUrl}/></div>
+            <div> <img alt="photo" className="w-20 h-20 rounded-full object-cover " src = {photoUrl}/></div>
             <div className="text-left mx-4">
           
            <h2 className="font-bold text-xl">{FirstName +" " +LastName} </h2>

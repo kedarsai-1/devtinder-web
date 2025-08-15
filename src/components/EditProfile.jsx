@@ -98,12 +98,23 @@ const EditProfile =({user})=>{
 </div>
         </div>
         </div>
-        <Usercard user = {{FirstName,LastName,photoUrl,age,gender,about}}/>
+        <div className="card bg-gradient-to-br from-base-200 via-base-300 to-base-100 w-96 shadow-xl border border-base-300 hover:shadow-2xl transition-all duration-300">
+          <figure className="h-80 w-full overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 animate-pulse"></div>
+            <img
+              src={photoUrl || "https://via.placeholder.com/400x400?text=No+Image"}
+              alt="Profile preview"
+              className="max-w-full max-h-full object-contain rounded-xl shadow-2xl border-2 border-base-300 hover:scale-105 transition-transform duration-300" />
+          </figure>
+          <div className="card-body bg-gradient-to-br from-base-100 to-base-200">
+            <h2 className="card-title text-primary font-bold text-xl">{FirstName + " " + LastName}</h2>
+            {age && gender && (<p className="text-secondary font-medium">{age + " " + gender}</p>)}
+            <p className="text-base-content/80 leading-relaxed">{about}</p>
+          </div>
+        </div>
         </div>
   {showtoast  && (    <div className="toast toast-top toast-center">
-  <div className="alert alert-info">
-    <span></span>
-  </div>
+ 
   <div className="alert alert-success">
     <span>Profile saved successfully.</span>
   </div>
