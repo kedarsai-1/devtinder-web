@@ -10,7 +10,7 @@ const Requests =()=>{
     const [Err,seterr]=useState("");
     const reviewrequest =async(status,_id)=>{
         try{
-          const res=  await axios.post(BASE_URL+"request/review/"+status+"/"+ _id,{},{withCredentials:true});
+          const res=  await axios.post(BASE_URL+"/request/review/"+status+"/"+ _id,{},{withCredentials:true});
           dispatch(removeRequest(_id));
         }
         catch(err){
@@ -21,7 +21,7 @@ const Requests =()=>{
     }
     const fetchRequests = async ()=>{
         try{
-            const res = await axios.get(BASE_URL+"user/requests/received",{
+            const res = await axios.get(BASE_URL+"/user/requests/received",{
                 withCredentials:true,
             })
        

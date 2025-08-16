@@ -22,7 +22,7 @@ const EditProfile =({user})=>{
    
        
         try{
-            const res = await axios.patch(BASE_URL+"profile/edit",{
+            const res = await axios.patch(BASE_URL+"/profile/edit",{
                 FirstName,LastName,age,gender,about,photoUrl
 
             },{

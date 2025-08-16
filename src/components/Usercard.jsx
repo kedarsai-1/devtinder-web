@@ -10,7 +10,7 @@ const Usercard = (props)=>{
 const {user} =props; 
 const handleSendRequest =async (status,userId)=>{
   try{
-  const  res = await axios.post(BASE_URL+"request/send/"+status+"/"+userId,{},{withCredentials:true})
+  const  res = await axios.post(BASE_URL+"/request/send/"+status+"/"+userId,{},{withCredentials:true})
     dispatch(removeUserFromfeed(userId))
   }
   catch(err){

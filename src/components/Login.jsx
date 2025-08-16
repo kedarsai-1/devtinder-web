@@ -16,7 +16,7 @@ const Login =()=>{
     const navigate = useNavigate();
     const handlesignup= async ()=>{
       try{
-        const res= await axios.post(BASE_URL+"signup",{FirstName,LastName,emailId,Password},{withCredentials:true})
+        const res= await axios.post(BASE_URL+"/signup",{FirstName,LastName,emailId,Password},{withCredentials:true})
         dispatch(addUser(res.data))
         navigate("/profile")
 
@@ -27,7 +27,7 @@ const Login =()=>{
     }
     const handleLogin =async ()=>{
         try{
-    const res = await axios.post(BASE_URL+"login",{
+    const res = await axios.post(BASE_URL+"/login",{
             emailId,
              Password
         },
